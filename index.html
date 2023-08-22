@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Sale</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-amber-50 grid md:grid-cols-2 items-center px-24 py-16 gap-2">
+        <div class="text-center">
+            <h2 class="text-3xl font-medium mt-24">---SALE FEVER---</h2>
+            <h1 class="text-5xl font-bold mt-6 mr-4">Purchase TK 200 or
+            </h1>
+            <h1 class="text-5xl font-bold mr-4">above & get<span class="text-pink-500"> 20% off</span>
+            </h1>
+            <p class="mt-16">
+                <span class="text-2xl font-medium">Use Promo Code</span>
+                <button class="bg-pink-500 text-white px-10 py-2 ml-2">SELL200</button>
+            </p>
+        </div>
+        <img src="./images/Summer 1.png" alt="">
+    </header>
+    <!-- Main Section -->
+    <main class="">
+        <section class="flex flex-col lg:flex-row mt-16 px-16 mb-10 gap-2">
+            <div class="gap-6 mr-4">
+<!-- Kitchenware Section -->
+                <h2 class="text-4xl font-medium">Kitchenware</h2>
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    
+                    <div class="card w-72 bg-base-100 shadow items-center text-center mt-10">
+                            <div class="items-center rounded-xl bg-gray-100 px-16 py-4 mt-8"><img src="./images/prod1.png" alt="prod1"/></div>
+                        <div class="p-8">
+                            <div class="rating">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <h5 class="card-title mt-2 text-xl font-bold"><span id="spoons">Spoons Accessories</span></h5>
+                            <p class="text-xl font-semibold"><span id="spoons-price">79.00 </span>TK</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card w-72 shadow bg-base-100 items-center text-center mt-10">
+                        <p class="items-center rounded-xl bg-gray-100 px-12 py-4 mt-8"><img src="./images/prod2.png" alt="prod1"/></p>
+                        <div class="p-8">
+                            <p class="rating">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </p>
+                            <h5 class="card-title mt-2 text-xl font-bold"><span id="k-accessories">Kitchen Accessories</span></h5>
+                            <p class="text-xl font-semibold"><span id="k-accessories-price">80.00 </span>TK</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card w-72 bg-base-100 shadow items-center text-center mt-10">
+                        <p class="items-center rounded-xl bg-gray-100 px-10 py-5 mt-8"><img src="./images/prod3.png" alt="prod3"/></p>
+                        <div class="p-8">
+                            <p class="rating">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </p>
+                            <h5 class="card-title mt-2 text-xl font-bold"><span id="cooker">Home Cooker</span></h5>
+                            <p class="text-xl font-semibold"><span id="cooker-price">189.00 </span>TK</p>
+                        </div>
+                    </div>
+                </div>
+<!-- Sportswear Section -->
+
+<!-- Furniture Section  -->
+
+            </div>
+            <div class="mt-20">
+                <div class="bg-white rounded-xl p-4">
+                    <h1 class="text-2xl font-semibold">Have coupon?</h1>
+                    <p>
+                        <input id="couponCodeInput" type="text" class="bg-gray-50 rounded-md p-1" placeholder="Coupon Code">
+                        <button id="applyCouponBtn" class="bg-pink-500 text-white px-2 py-1 rounded-r-xl">Apply</button>
+                    </p>
+                </div>
+                <div id="shoping-items" class="bg-white rounded-xl mt-4 p-4 text-2xl font-semibold"></div>
+                <div class="bg-white rounded-xl mt-4 p-4 py-8">
+                    <p class="text-2xl font-semibold">Total Price: <span id="total-price">00.00</span></p>
+                    <p class="text-2xl font-semibold">Discount: <span id="discount">00.00</span></p>
+                    <p class="text-2xl font-semibold">Total: <span id="grand-total">00.00</span></p>
+                </div>
+                <div class="ml-7"><button type="submit" id="purchaseBtn" class="bg-pink-500 text-white text-2xl font-medium px-8 py-2 rounded-xl">Make Purchase</button></div>
+                
+            </div>
+        </section>
+    </main>
+    <script>
+        const cards = document.getElementById('.card')
+        const couponCodeInput = document.getElementById('couponCodeInput')
+        const applyCouponButton = document.getElementById('applyCouponBtn')
+        const totalPriceElement = document.getElementById('total-price')
+        const discountElement = document.getElementById('discount')
+        const grandTotalElement = document.getElementById('grant-total')
+        const congratsModal = document.getElementById('congratsModal')
+        const goHomeButton = document.getElementById('goHomeBtn')
+        const makePurchaseButton = document.getElementById('purchaseBtn')
+
+        let totalPrice = 0;
+        let discount = 0;
+        let grandTotal = 0;
+
+        // cards.forEach(card => {    
+        // });(card => {
+        //     card.addEventListener('click', () => {
+        //         const price = parseFloat(card.querySelector('p').textContent.split(':')[1]);
+        //         console.log(price);
+        //         // totalPrice += price;
+        //         // updateUI();
+        //     })
+        // });
+
+        
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

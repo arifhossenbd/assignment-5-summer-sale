@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <h2>Item: Example 1</h2>
+        <!-- other card content -->
+    </div>
+    
+    <div class="card">
+        <h2>Item: Example 2</h2>
+        <!-- other card content -->
+    </div>
+    
+    <!-- ... more cards ... -->
+    
+    <div id="shoppingItems">
+        <!-- Selected items will be displayed here -->
+    </div>
+    <script>
+        const cards = document.querySelectorAll('.card');
+const selectedItemContainer = document.getElementById('shoppingItems');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const text = card.querySelector('h2').textContent.split(':')[1].trim(); // Extract the text after ':'
+        
+        const li = document.createElement('li');
+        li.innerText = text;
+        
+        selectedItemContainer.appendChild(li); // Add the selected item to the shoppingItems container
+        
+        updateUI(); // You can call the updateUI() function if you have it defined elsewhere
+    });
+});
+
+
+const cards = document.querySelectorAll('.card');
+const selectedItemContainer = document.getElementById('shoppingItems');
+const maxItems = 5; // Set the maximum number of displayed items
+let itemCount = 1; // Initialize item count
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        if (selectedItemContainer.children.length >= maxItems) {
+            selectedItemContainer.removeChild(selectedItemContainer.firstElementChild); // Remove the oldest item
+        }
+
+        const text = card.querySelector('h2').textContent.split(':')[1].trim(); // Extract the text after ':'
+        
+        const li = document.createElement('li');
+        li.innerText = `${itemCount}. ${text}`; // Add the item count in front of the text
+        itemCount++; // Increment the item count
+        
+        selectedItemContainer.appendChild(li); // Add the selected item to the shoppingItems container
+        
+        updateUI(); // You can call the updateUI() function if you have it defined elsewhere
+    });
+});
+
+
+
+const cards = document.querySelectorAll('.card');
+const selectedItemContainer = document.getElementById('shoppingItems');
+const maxItems = 5; // Set the maximum number of displayed items
+let itemCount = 1; // Initialize item count
+
+function handleClick(event) {
+    if (selectedItemContainer.children.length >= maxItems) {
+        cards.forEach(card => {
+            card.removeEventListener('click', handleClick); // Remove click event listener from all cards
+        });
+        return; // Stop adding new items
+    }
+
+    const card = event.currentTarget;
+    const text = card.querySelector('h2').textContent.split(':')[1].trim(); // Extract the text after ':'
+    
+    const li = document.createElement('li');
+    li.innerText = `${itemCount}. ${text}`; // Add the item count in front of the text
+    itemCount++; // Increment the item count
+    
+    selectedItemContainer.appendChild(li); // Add the selected item to the shoppingItems container
+    
+    updateUI(); // You can call the updateUI() function if you have it defined elsewhere
+}
+
+cards.forEach(card => {
+    card.addEventListener('click', handleClick);
+});
+
+    </script>
+</body>
+</html>
